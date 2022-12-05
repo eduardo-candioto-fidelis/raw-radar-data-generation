@@ -58,9 +58,9 @@ def main():
     #os.environ["WANDB_RUN_ID"] = "19fh3wpc"
 
     wandb.init(
-        project='raw-data-generation',
+        project='test',
         entity='eduardo-candioto',
-        name='conditional-nooutiliers-all-2',
+        name='conditional-nooutiliers',
         config=gan_config,
         #pid="19fh3wpc", 
         #resume="allow"
@@ -71,7 +71,7 @@ def main():
         model_file = wandb.restore(f'model-{wandb.run.id}.h5').name
         gan = load_weights(gan, model_file)
     
-    dataset = load_dataset_labaled('./data/preprocessed/EXP_17_all_chirps_scaled.npy', './data/preprocessed/EXP_17_all_chirps_labels.npy', batch_size)
+    dataset = load_dataset_labaled('./data/preprocessed/EXP_17_M_chirps_scaled.npy', './data/preprocessed/EXP_17_M_chirps_labels.npy', batch_size)
 
     print(f'\n\n--------------------- Run: {wandb.run.name} ---------------------------\n\n')
 

@@ -18,7 +18,6 @@ tf.random.set_seed(34643)
 
 
 def reshape_generations(generated):
-    #return tf.reshape(generated, shape=(generated.shape[0], 16, 1024))
     return tf.transpose(generated, [0, 2, 1])
 
 
@@ -33,13 +32,6 @@ def save_conditional_generations(model, epoch, name):
     generator = gan.generator
     start_time = time.time()
     distances = np.linspace(25.0, 0.0, 6000).reshape((6000, 1))
-    #distances = tf.repeat([[10.0]], repeats=[50], axis=0)
-    #distances = tf.repeat([[6.391821368455132]], repeats=[50], axis=0)
-    #distances = tf.repeat([[15.0]], repeats=[3], axis=0)
-    #distances = tf.repeat([[28.0]], repeats=[50], axis=0)
-    #distances = np.load('data/EXP_17_M_labels.npy')[0] 
-    #distances = np.array([np.unique(distances)]).T * -1    
-
     distances_scaled = (distances - 10.981254577636719) / 7.1911773681640625
     
     noise = tf.random.normal(shape=[len(distances), 100])

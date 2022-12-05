@@ -29,10 +29,9 @@
 
 import math
 
-import cv2
 import matplotlib.pyplot as plt
 import pandas as pd
-import argparse
+import sys
 import numpy as np
 
 from src import bsd_lib as bsd
@@ -151,7 +150,8 @@ target_dict = detector_blind_spot.detect(RDImg, RAimg)
 
 radar._attrs['nLoop'] = 1
 # Loading raw data:
-raw_data = np.load('/home/eduardo/workspace/rota2030-bsm-srdg/data/generated/conditiona-nooutliers-2.npy')
+data = sys.argv[1]
+raw_data = np.load(f'./data/generated/{data}.npy')
 
 print("Max frames:", int(radar._attrs["maxFrm"]))
 
@@ -163,10 +163,9 @@ while i < int(len(raw_data)):
     
     radar.range_Profile(raw_data[i])
     RAimg = radar.range_Azimuth()['Data']
-    print(RAimg.shape)
     plt.figure(figsize=(10, 15))
     plt.imshow(RAimg)
-    plt.savefig(f'./plots/generation/generation1/{i}.png')
+    plt.savefig(f'./plots/generation/{i}.png')
     plt.close('all')
 
     ra_imgs.append(RAimg)
