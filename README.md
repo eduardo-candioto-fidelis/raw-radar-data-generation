@@ -3,7 +3,7 @@
 
 This repository is the the code used in the paper: Generation of Realistic Synthetic Raw Radar Data for Automated Driving Applications using Generative Adversarial Networks. Above there a summary of this method.
 
-![Summary of the Approach](summary.svg "Summary of the Approach")
+![Summary of the Approach](summary.png "Summary of the Approach")
 
 ## Instalation
 ---
