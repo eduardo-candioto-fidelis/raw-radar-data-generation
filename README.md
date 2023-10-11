@@ -10,6 +10,11 @@ This repository is the the code used in the paper: Generation of Realistic Synth
 ```console
 $ git clone <repository>
 ```
+
+## Accessing the Dataset
+
+The dataset file `EXP_17_M.h5` is also avaiable on [kaggle](https://www.kaggle.com/datasets/eduardocandioto/raw-radar-data?select=EXP_17_M.h5).
+
 ## Usage
 ---
 
