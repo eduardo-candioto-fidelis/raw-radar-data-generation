@@ -1,6 +1,9 @@
 # Raw Radar Data Generation
 ---
 
+[![arXiv](https://img.shields.io/badge/arXiv%20papr-2404.02905-b31b1b.svg)](https://arxiv.org/abs/2308.02632 
+)&nbsp;
+
 This repository is the the code used in the paper: Generation of Realistic Synthetic Raw Radar Data for Automated Driving Applications using Generative Adversarial Networks. Above there a summary of this method.
 
 ![Summary of the Approach](summary.png "Summary of the Approach")
